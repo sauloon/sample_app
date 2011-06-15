@@ -4,6 +4,13 @@ describe PagesController do
   render_views
 
   ############################################
+  # Before Each - Runs before each test
+  ############################################
+  before(:each) do
+    @base_title = "Ruby on Rails Tutorial Sample App | "
+  end
+
+  ############################################
   # Home Page Tests
   ############################################
   describe "GET 'home'" do
@@ -15,7 +22,7 @@ describe PagesController do
     it "should have the right title" do
       get 'home'
       response.should have_selector( "title",
-                                     :content => "Ruby on Rails Tutorial Sample App | Home" )
+                                     :content => @base_title + "Home" )
     end
   end
 
@@ -31,7 +38,7 @@ describe PagesController do
     it "should have the right title" do
       get 'contact'
       response.should have_selector( "title",
-                                     :content => "Ruby on Rails Tutorial Sample App | Contact" )
+                                     :content => @base_title + "Contact" )
     end
   end
 
@@ -47,7 +54,7 @@ describe PagesController do
     it "should have the right title" do
       get 'about'
       response.should have_selector( "title",
-                                     :content => "Ruby on Rails Tutorial Sample App | About" )
+                                     :content => @base_title + "About" )
     end
   end
 
