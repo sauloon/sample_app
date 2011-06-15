@@ -54,7 +54,7 @@ describe PagesController do
   ############################################
   # Help Page Tests
   ############################################
-  describe "GET 'about'" do
+  describe "GET 'help'" do
     it "should be successful" do
       get 'help'
       response.should be_success
