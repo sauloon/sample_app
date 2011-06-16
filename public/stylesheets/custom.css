@@ -114,3 +114,17 @@ a.signup_button {
   background-image:         linear-gradient(top, #00DD00, #ffffff);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#00DD00', EndColorStr='#ffffff'); /* IE6.IE9 */
 }
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 10px;
+    width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer nav {
+    float: none;
+}
