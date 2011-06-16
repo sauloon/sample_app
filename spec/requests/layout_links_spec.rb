@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe "LayoutLinks" do
 
+  ##############################################################
+  ### Basic Routing Checks
+  ##############################################################
   it "should have a Home page at '/'" do
     get '/'
     response.should have_selector( 'title', :content => "Home" )
@@ -25,6 +28,28 @@ describe "LayoutLinks" do
   it "should have a Sign up page at '/signup'" do
     get '/signup'
     response.should have_selector( 'title', :content => "Sign up" )
+  end
+
+  ##############################################################
+  ### Tests to make sure that links point correctly
+  ##############################################################
+  it "should have links pointing to the right pages" do
+    visit root_path
+    click_link "About"
+    response.should have_selector( "title",
+                                   :content => "About" )
+    click_link "Contact"
+    response.should have_selector( "title",
+                                   :content => "Contact" )
+    click_link "Help"
+    response.should have_selector( "title",
+                                   :content => "Help" )
+    click_link "Home"
+    response.should have_selector( "title",
+                                   :content => "Home" )
+    click_link "Sign up"
+    response.should have_selector( "title",
+                                   :content => "Sign up" )
   end
 
 end
